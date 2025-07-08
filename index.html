@@ -294,13 +294,13 @@
         <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
         <p class="content has-text-centered">NeoBabel achieves state-of-the-art results on both English and multilingual benchmarks, despite being 2-4x smaller than competing models.</p>
         
-        <h3 class="title is-4 has-text-centered">English-Only GenEval Benchmark</h3>
-        <div class="table-container">
+        <h3 class="title is-4 has-text-centered">Multilingual m-GenEval Benchmark</h3>
+        <!-- <div class="table-container">
             <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                 <thead><tr><th>Method</th><th>Params.</th><th>Overall Score</th></tr></thead>
                 <tbody>
-                    <tr><td>BLIP3-o</td><td>8B</td><td>0.83</td></tr>
                     <tr><td><strong>NeoBabel (Ours)</strong></td><td><strong>2B</strong></td><td><strong>0.83</strong></td></tr>
+                    <tr><td>BLIP3-o</td><td>8B</td><td>0.83</td></tr>
                     <tr><td>BLIP3-o</td><td>4B</td><td>0.81</td></tr>
                     <tr><td>Janus-Pro</td><td>7B</td><td>0.80</td></tr>
                     <tr><td>Show-o</td><td>1.3B</td><td>0.68</td></tr>
@@ -308,21 +308,29 @@
                 </tbody>
             </table>
             <p class="has-text-centered"><i>Table 2 from the paper: NeoBabel matches the SOTA English score with 4x fewer parameters.</i></p>
+        </div> -->
+
+        <div class="image-container">
+          <img src="static/images/model_performance_faceted_heatmap_colorbar.png" alt="Model Performance Heatmap" class="image">
+          <p class="has-text-centered"><i>Figure 3 from the paper: NeoBabel matches the SOTA English score and outperforms on all multilingual cases.</i></p>
         </div>
+      
 
         <h3 class="title is-4 has-text-centered mt-6">Multilingual m-DPG Benchmark</h3>
         <div class="table-container">
-            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-                <thead><tr><th>Method</th><th>Params.</th><th>English</th><th>Chinese</th><th>Dutch</th><th>French</th><th>Hindi</th><th>Persian</th><th><strong>Overall</strong></th></tr></thead>
-                <tbody>
-                    <tr><td><strong>NeoBabel (Ours)</strong></td><td><strong>2B</strong></td><td><strong>0.75</strong></td><td><strong>0.70</strong></td><td><strong>0.69</strong></td><td><strong>0.70</strong></td><td><strong>0.63</strong></td><td><strong>0.65</strong></td><td><strong>0.68</strong></td></tr>
-                    <tr><td>BLIP3-o</td><td>8B</td><td>0.80</td><td>0.56</td><td>0.59</td><td>0.61</td><td>0.50</td><td>0.53</td><td>0.59</td></tr>
-                    <tr><td>BLIP3-o</td><td>4B</td><td>0.79</td><td>0.60</td><td>0.58</td><td>0.59</td><td>0.47</td><td>0.49</td><td>0.58</td></tr>
-                    <tr><td>Janus Pro</td><td>7B</td><td>0.84</td><td>0.50</td><td>0.61</td><td>0.68</td><td>0.12</td><td>0.12</td><td>0.47</td></tr>
-                    <tr><td>Show-o</td><td>1.3B</td><td>0.67</td><td>0.10</td><td>0.22</td><td>0.32</td><td>0.04</td><td>0.04</td><td>0.23</td></tr>
-                </tbody>
-            </table>
-            <p class="has-text-centered"><i>Table 3 from the paper: NeoBabel significantly outperforms all baselines across non-English languages.</i></p>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+              <thead>
+                  <tr><th>Method</th><th>Params.</th><th>English</th><th>Chinese</th><th>Dutch</th><th>French</th><th>Hindi</th><th>Persian</th><th><strong>Overall</strong></th></tr>
+              </thead>
+              <tbody>
+                  <tr><td>Show-o</td><td>1.3B</td><td>0.67</td><td>0.10</td><td>0.22</td><td>0.32</td><td>0.04</td><td>0.04</td><td>0.23</td></tr>
+                  <tr><td>BLIP3-o</td><td>4B</td><td>0.79</td><td>0.60</td><td>0.58</td><td>0.59</td><td>0.47</td><td>0.49</td><td>0.58</td></tr>
+                  <tr><td>Janus Pro</td><td>7B</td><td>0.84</td><td>0.50</td><td>0.61</td><td>0.68</td><td>0.12</td><td>0.12</td><td>0.47</td></tr>
+                  <tr><td>BLIP3-o</td><td>8B</td><td>0.80</td><td>0.56</td><td>0.59</td><td>0.61</td><td>0.50</td><td>0.53</td><td>0.59</td></tr>
+                  <tr><td><strong>NeoBabel (Ours)</strong></td><td><strong>2B</strong></td><td><strong>0.75</strong></td><td><strong>0.70</strong></td><td><strong>0.69</strong></td><td><strong>0.70</strong></td><td><strong>0.63</strong></td><td><strong>0.65</strong></td><td><strong>0.68</strong></td></tr>
+              </tbody>
+          </table>
+          <p class="has-text-centered"><i>Table 3 from the paper: NeoBabel significantly outperforms all baselines across non-English languages.</i></p>
         </div>
     </div>
   </section>
