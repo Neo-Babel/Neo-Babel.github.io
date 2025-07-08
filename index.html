@@ -26,6 +26,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <!-- <style>
+    .hero-background-container {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('static/images/neobabel-cohere-banner.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .hero-background-container .hero {
+      background-color: transparent;
+    }
+    .hero-background-container .title,
+    .hero-background-container .publication-authors,
+    .hero-background-container .content.is-italic {
+      color: white;
+    }
+    .hero-background-container .publication-authors span,
+    .hero-background-container .eql-cntrb small {
+      color: #dddddd;
+    }
+  </style> -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
@@ -34,6 +55,7 @@
 </head>
 <body>
 
+<div class="hero-background-container">
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -41,7 +63,7 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
               <div class="is-flex is-justify-content-center is-vcentered">
-                <img src="static/images/neobabel_new_color.png" alt="NeoBabel Icon" style="height: 1.2em; margin-right: 0.5em;">
+                <img src="static/images/neobabel_new_color.png" alt="NeoBabel Icon" style="height: 1.8em; margin-right: 0.5em;">
                 <span>NeoBabel: A Multilingual Open Tower for Visual Generation</span>
               </div>
             </h1>
@@ -60,34 +82,34 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="static/pdfs/neobabel_paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/mmderakhshani/NeoBabel" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
                     <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://hf.co/mderakhshani/NeoBabel" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
                     <span class="icon"><i class="fas fa-robot"></i></span><span>Models</span>
                   </a>
                 </span>
               </div>
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://hf.co/datasets/mderakhshani/NeoBabel-Pretrain" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
                     <span class="icon"><i class="fas fa-database"></i></span><span>Pretraining Data</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://hf.co/datasets/mderakhshani/NeoBabel-Instruct" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
                     <span class="icon"><i class="fas fa-database"></i></span><span>Instruction Data</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://hf.co/datasets/mderakhshani/NeoBabel-Eval" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
                     <span class="icon"><i class="fas fa-database"></i></span><span>Evaluation Data</span>
                   </a>
                 </span>
@@ -98,6 +120,7 @@
       </div>
     </div>
   </section>
+</div>
 
   <!-- Hero Plot -->
   <section class="section">
@@ -106,12 +129,13 @@
         <div class="column has-text-centered">
           <img src="static/images/geneval_demo_with_improvements.png" alt="Plot showing NeoBabel's performance compared to other models."/>
           <p class="content is-italic has-text-centered mt-2">
-            <b>Figure 1 from the paper:</b> NeoBabel establishes a new Pareto frontier in multilingual image generation performance, efficiency, and inclusivity. It matches state-of-the-art models on English benchmarks while being 2-4x smaller, and significantly outperforms them on multilingual tasks.
+            NeoBabel establishes a new Pareto frontier in multilingual image generation performance, efficiency, and inclusivity. It matches state-of-the-art models on English benchmarks while being 2-4x smaller, and significantly outperforms them on multilingual tasks.
           </p>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Paper abstract -->
   <section class="section hero is-light">
@@ -132,26 +156,18 @@
   <!-- NeoBabel Architecture -->
   <section class="section">
       <div class="container is-max-desktop">
-          <div class="columns is-centered">
-              <div class="column is-full-width">
-                  <h2 class="title is-3 has-text-centered">NeoBabel Architecture</h2>
-                  <div class="columns is-vcentered">
-                      <div class="column is-half">
-                          <div class="content">
-                              <p>NeoBabel builds upon a pretrained multilingual LLM (Gemma-2) and introduces two key modifications for visual generation:</p>
-                              <ul>
-                                  <li><strong>Unified Multimodal Embedding:</strong> We extend the LLM's vocabulary with 8,192 new embeddings for discrete image tokens. This allows the model to process both text and image tokens natively within a shared semantic space, eliminating the need for separate encoders.</li>
-                                  <li><strong>Modality-Aware Attention:</strong> A hybrid attention mechanism is used. Text tokens use causal attention to preserve autoregressive language capabilities, while image tokens use full bidirectional attention for rich, high-fidelity image synthesis.</li>
-                                  <li><strong>Unified Task Representation:</strong> All tasks, such as text-to-image generation and inpainting, are treated as a single autoregressive sequence prediction problem, simplifying the training pipeline.</li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="column is-half">
-                          <img src="static/images/architecture_diagram.png" alt="NeoBabel architecture diagram showing text and image tokens being processed into a final image."/>
-                          <p class="has-text-centered"><i>Overview of the NeoBabel architecture.</i></p>
-                      </div>
-                  </div>
-              </div>
+          <h2 class="title is-3 has-text-centered">NeoBabel Architecture</h2>
+          <div class="has-text-centered">
+              <img src="static/images/architecture_diagram.png" alt="NeoBabel architecture diagram" style="max-width: 720px; width: 100%; margin: auto;"/>
+              <p class="is-italic mt-2">Overview of the NeoBabel architecture.</p>
+          </div>
+          <div class="content mt-5">
+              <p>NeoBabel builds upon a pretrained multilingual LLM (Gemma-2) and introduces two key modifications for visual generation:</p>
+              <ul>
+                  <li><strong>Unified Multimodal Embedding:</strong> We extend the LLM's vocabulary with 8,192 new embeddings for discrete image tokens. This allows the model to process both text and image tokens natively within a shared semantic space, eliminating the need for separate encoders.</li>
+                  <li><strong>Modality-Aware Attention:</strong> A hybrid attention mechanism is used. Text tokens use causal attention to preserve autoregressive language capabilities, while image tokens use full bidirectional attention for rich, high-fidelity image synthesis.</li>
+                  <li><strong>Unified Task Representation:</strong> All tasks, such as text-to-image generation and inpainting, are treated as a single autoregressive sequence prediction problem, simplifying the training pipeline.</li>
+              </ul>
           </div>
       </div>
   </section>
@@ -186,7 +202,7 @@
                       </tbody>
                   </table>
               </div>
-              <p class="has-text-centered"><i>Expansion of datasets for multilingual training.</i></p>
+              <p class="has-text-centered is-italic">Expansion of datasets for multilingual training.</p>
           </div>
       </div>
   </section>
@@ -195,26 +211,28 @@
   <section class="section">
     <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">NeoBabel Training Stages</h2>
-        <div class="columns is-vcentered">
-            <div class="column is-half">
-                <div class="content">
-                    <p>NeoBabel is trained using a staged learning framework that progressively builds its capabilities:</p>
+        <div class="has-text-centered">
+            <img src="static/images/progressive-training-merged.png" alt="Graph showing performance improvement across training stages." style="max-width: 800px; width: 100%; margin: auto;"/>
+            <p class="is-italic mt-2">Performance on m-GenEval and m-DPG improves steadily across pretraining and instruction tuning stages.</p>
+        </div>
+        <div class="content mt-5">
+            <p>NeoBabel is trained using a staged learning framework that progressively builds its capabilities:</p>
+            <div class="columns">
+                <div class="column">
                     <p><strong>Progressive Pretraining (at 256x256):</strong></p>
                     <ul>
                         <li><strong>Stage 1 - Pixel Dependency Learning:</strong> Training on ImageNet with class labels to learn foundational visual representations.</li>
-                        <li><strong>Stage 2 - Scaling Alignment:</strong> Fine-tuning on 94M image-caption pairs (m-SA-1B, m-CC12M, m-LAION-Aesthetic) to ground the model in natural language.</li>
-                        <li><strong>Stage 3 - Refined Multilingual Pretraining:</strong> Final pretraining on 96M high-quality pairs (m-LAION-Aesthetic, m-JourneyDB) to improve aesthetic generation.</li>
+                        <li><strong>Stage 2 - Scaling Alignment:</strong> Fine-tuning on 94M image-caption pairs to ground the model in natural language.</li>
+                        <li><strong>Stage 3 - Refined Multilingual Pretraining:</strong> Final pretraining on 96M high-quality pairs to improve aesthetic generation.</li>
                     </ul>
+                </div>
+                <div class="column">
                     <p><strong>Progressive Instruction Tuning (at 512x512):</strong></p>
                     <ul>
                         <li><strong>Stage 1 - Initial Alignment:</strong> Training on a mix of aesthetic and instruction-following data to build high-resolution capabilities.</li>
                         <li><strong>Stage 2 - Instruction Refinement:</strong> Shifting the data mix to emphasize complex, instruction-rich samples to refine the model's ability to follow commands.</li>
                     </ul>
                 </div>
-            </div>
-            <div class="column is-half">
-                <img src="static/images/progressive-training-merged.png" alt="Graph showing performance improvement across training stages."/>
-                <p class="has-text-centered"><i>Performance on m-GenEval and m-DPG improves steadily across pretraining and instruction tuning stages.</i></p>
             </div>
         </div>
     </div>
@@ -265,11 +283,11 @@
       <div class="columns is-centered is-vcentered">
         <div class="column">
           <img src="static/images/inpainting_chair.png" alt="Inpainting a chair to look like a strawberry in Chinese.">
-          <p class="has-text-centered"><i>Inpainting across languages.</i></p>
+          <p class="has-text-centered is-italic">Inpainting across languages.</p>
         </div>
         <div class="column">
           <img src="static/images/extrapolation_car.png" alt="Extrapolating a futuristic car in a city of mirrors using English and Hindi prompts.">
-          <p class="has-text-centered"><i>Extrapolation across languages.</i></p>
+          <p class="has-text-centered is-italic">Extrapolation across languages.</p>
         </div>
       </div>
 
@@ -278,11 +296,11 @@
       <div class="columns is-centered is-vcentered">
         <div class="column is-half">
           <img src="static/images/codeswitch_corgi.png" alt="A Corgi dog wearing sunglasses, generated from an English, Dutch, and French prompt.">
-          <p class="has-text-centered"><i>Generated from a mix of English, Dutch, and French.</i></p>
+          <p class="has-text-centered is-italic">Generated from a mix of English, Dutch, and French.</p>
         </div>
         <div class="column is-half">
           <img src="static/images/codeswitch_smugcat.png" alt="A smug cat wearing sunglasses, generated from a Hindi, Persian, and Chinese prompt.">
-          <p class="has-text-centered"><i>Generated from a mix of Hindi, Persian, and Chinese.</i></p>
+          <p class="has-text-centered is-italic">Generated from a mix of Hindi, Persian, and Chinese.</p>
         </div>
       </div>
     </div>
@@ -295,24 +313,11 @@
         <p class="content has-text-centered">NeoBabel achieves state-of-the-art results on both English and multilingual benchmarks, despite being 2-4x smaller than competing models.</p>
         
         <h3 class="title is-4 has-text-centered">Multilingual m-GenEval Benchmark</h3>
-        <!-- <div class="table-container">
-            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-                <thead><tr><th>Method</th><th>Params.</th><th>Overall Score</th></tr></thead>
-                <tbody>
-                    <tr><td><strong>NeoBabel (Ours)</strong></td><td><strong>2B</strong></td><td><strong>0.83</strong></td></tr>
-                    <tr><td>BLIP3-o</td><td>8B</td><td>0.83</td></tr>
-                    <tr><td>BLIP3-o</td><td>4B</td><td>0.81</td></tr>
-                    <tr><td>Janus-Pro</td><td>7B</td><td>0.80</td></tr>
-                    <tr><td>Show-o</td><td>1.3B</td><td>0.68</td></tr>
-                    <tr><td>SD3</td><td>2B</td><td>0.62</td></tr>
-                </tbody>
-            </table>
-            <p class="has-text-centered"><i>Table 2 from the paper: NeoBabel matches the SOTA English score with 4x fewer parameters.</i></p>
-        </div> -->
-
-        <div class="image-container">
-          <img src="static/images/model_performance_faceted_heatmap_colorbar.png" alt="Model Performance Heatmap" class="image">
-          <p class="has-text-centered"><i>Figure 3 from the paper: NeoBabel matches the SOTA English score and outperforms on all multilingual cases.</i></p>
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <img src="static/images/model_performance_faceted_heatmap_colorbar.png" alt="Model Performance Heatmap on m-GenEval" class="image">
+            <p class="has-text-centered is-italic mt-2">Figure 3 from the paper: NeoBabel matches the SOTA English score and outperforms on all multilingual cases.</p>
+          </div>
         </div>
       
 
@@ -330,7 +335,7 @@
                   <tr><td><strong>NeoBabel (Ours)</strong></td><td><strong>2B</strong></td><td><strong>0.75</strong></td><td><strong>0.70</strong></td><td><strong>0.69</strong></td><td><strong>0.70</strong></td><td><strong>0.63</strong></td><td><strong>0.65</strong></td><td><strong>0.68</strong></td></tr>
               </tbody>
           </table>
-          <p class="has-text-centered"><i>Table 3 from the paper: NeoBabel significantly outperforms all baselines across non-English languages.</i></p>
+          <p class="has-text-centered is-italic">Table 3 from the paper: NeoBabel significantly outperforms all baselines across non-English languages.</p>
         </div>
     </div>
   </section>
@@ -339,15 +344,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{derakhshani2025neobabel,
-      title={NeoBabel: A Multilingual Open Tower for Visual Generation}, 
-      author={Mohammad Mahdi Derakhshani and Dheeraj Varghese and Marzieh Fadaee and Cees G. M. Snoek},
-      year={2025},
-      eprint={2507.XXXXX},
-      archivePrefix={arXiv},
-      url={https://Neo-Babel.github.io/},
-      note={Released as a preprint on July 8, 2025}
-}</code></pre>
+      <pre><code>To be determined.</code></pre>
     </div>
   </section>
 
